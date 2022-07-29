@@ -1,4 +1,19 @@
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // * In order to use ecma script modules 
 
 // import { send } from './request';
@@ -10,15 +25,20 @@
 // const response = require('./response');
 
 //  OR
+const internals =  require('../internals');
+// const { send } = require('./request');
+// const { read } = require('./response');
 
-const { send } = require('./request');
-const { read } = require('./response');
+// function makeRequest(url, data) {
+//     send(url, data);
+//     read();
+// };
+
 
 function makeRequest(url, data) {
-    send(url, data);
-    read();
+    internals.request.send(url, data);
+    return internals.response.read();
 };
-
 
 // function makeRequest(url, data) {
 //     request.send(url, data);
